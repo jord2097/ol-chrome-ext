@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+
+    "name": "Omniplex",
+    "description": "Chrome Extension Tech Test",
+    "version": "1.0",
+    "author": "Jordan Harrison",
+    "background": { "scripts": ["hot-reload.js"] },
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popout-login.html",
+        "default_title": "Chrome Extension Tech Test"
+
+    },
+    "permissions":  [
+        "activeTab",
+        "storage",
+        "idle"
+    ]
+
+}
