@@ -6,6 +6,13 @@
     "version": "1.0",
     "author": "Jordan Harrison",
     "background": { "scripts": ["hot-reload.js"] },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript.js"],            
+            "run_at": "document_end"
+        }
+    ],
     "browser_action": {
         "default_icon": "icon.png",
         "default_popup": "popout-login.html",

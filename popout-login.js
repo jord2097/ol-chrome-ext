@@ -1,5 +1,5 @@
 chrome.storage.local.get(["userID"], function (result){
-    if (result.userID.length > 0) {
+    if (result.userID) {
         window.location.replace("./popout-success.html")
     }    
 })
