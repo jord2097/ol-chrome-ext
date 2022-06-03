@@ -12,4 +12,4 @@ document.querySelector("form").addEventListener("submit", e => {
         }
     })
     window.location.replace("./popout-login.html")
-}) // logs out and returns to login form 
+}) // logs out and returns to login form
