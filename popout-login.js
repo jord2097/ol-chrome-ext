@@ -21,7 +21,10 @@ document.querySelector('form').addEventListener('submit', e => {
                 console.error("error")
             }            
             console.log("Logged in as " + username)
-        })        
+        })
+        chrome.tabs.query({active: true, currentWindow: true}, function (tabs){
+            chrome.tabs.sendMessage(tabs[0].id, {action: "user_logged_in"}, function (response) {})
+        })       
         window.location.replace("./popout-success.html")       
     }
 })
