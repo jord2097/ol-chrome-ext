@@ -9,7 +9,8 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["contentScript.js"],            
+            "js": ["contentScript.js"],
+            "css": ["output.css"],         
             "run_at": "document_end"
         }
     ],
@@ -19,8 +20,14 @@
         "default_title": "Chrome Extension Tech Test"
 
     },
+    "web_accessible_resources": [
+        "modal.html",
+        "modal.js",              
+        "output.css"
+    ],
     "permissions":  [
         "activeTab",
+        "tabs",
         "storage",
         "idle"
     ]
