@@ -35,6 +35,10 @@ document.querySelector('form').addEventListener('submit', function (e) {
         document.querySelector('#password').dataset.state = "invalid";
         document.getElementById("passwordHelp").innerHTML = "Please enter a password";
     }
+    if (password.trim() !== "password") {
+        document.querySelector('#password').dataset.state = "invalid";
+        document.getElementById("passwordHelp").innerHTML = "Incorrect Password";
+    }
     if (username.trim() && password === "password") { // login
         chrome.storage.local.set({ userID: username }, function () {
             var error = chrome.runtime.lastError;
