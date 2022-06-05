@@ -1,0 +1,15 @@
+input[data-state="valid"] {
+    outline-color: hsl(120, 76%, 50%);
+    border-color: hsl(120, 76%, 50%);
+}
+input[data-state="invalid"] {
+    outline-color: hsl(0, 76%, 50%);
+    border-color: hsl(0, 76%, 50%);
+}
+input:focus {    
+    outline-width: 2px;    
+}
+
+.fab {
+    color: black
+}
