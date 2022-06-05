@@ -4,8 +4,7 @@
     "name": "Omniplex",
     "description": "Chrome Extension Tech Test",
     "version": "1.0",
-    "author": "Jordan Harrison",
-    "background": { "scripts": ["hot-reload.js"] },
+    "author": "Jordan Harrison",    
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
