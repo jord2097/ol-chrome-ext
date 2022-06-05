@@ -62,6 +62,7 @@
     "yaml": "^1.10.2"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.188",
     "tailwindcss": "^3.0.24"
   },
   "scripts": {
