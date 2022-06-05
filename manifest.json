@@ -8,7 +8,7 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["webcomponents-bundle.js", "contentScript.js", "modal.js" ],
+            "js": ["contentScript.js", "modal.js" ],
             "css": ["output.css"],         
             "run_at": "document_end"
         }
