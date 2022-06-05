@@ -8,7 +8,7 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["contentScript.js", "modal.js" ],
+            "js": ["contentScript.js" ],
             "css": ["output.css"],         
             "run_at": "document_end"
         }
@@ -20,8 +20,7 @@
 
     },
     "web_accessible_resources": [
-        "modal.html",
-        "modal.js",              
+        "modal.html",                      
         "output.css"
     ],
     "permissions":  [
