@@ -18,7 +18,12 @@ const renderPopup = () => {
                     maindiv.remove()
                 });
             } // creates an event listener for each button found in the shadowRoot i.e. the two modal buttons 
-        }                                    
+        }
+        const modalTitle = shadowRoot.getElementById("modal-title")
+        chrome.storage.local.get(["userID"], function (result){            
+            modalTitle.innerHTML = "Are you lost " + result.userID + "?"  
+        })    
+                                       
     })   
 }
 
@@ -47,12 +52,14 @@ const idleTimer = () => {
        
 
 }
+
+
 chrome.storage.local.get(["userID"], function (result){
-    if (result.userID) {               
+    if (result.userID && !location.href.includes("nickelled.com")) {               
         idleTimer()      
     } else {
         chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {            
-            if (message.action === "user_logged_in") {
+            if (message.action === "user_logged_in" && !location.href.includes("nickelled.com")) {
                 idleTimer()
             }
         })  
