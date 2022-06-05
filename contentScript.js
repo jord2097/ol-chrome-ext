@@ -19,6 +19,10 @@ var renderPopup = function () {
                 });
             } // creates an event listener for each button found in the shadowRoot i.e. the two modal buttons 
         }
+        var modalTitle = shadowRoot.getElementById("modal-title");
+        chrome.storage.local.get(["userID"], function (result) {
+            modalTitle.innerHTML = "Are you lost " + result.userID + "?";
+        });
     });
 };
 var idleTimer = function () {
@@ -44,12 +48,12 @@ var idleTimer = function () {
     });
 };
 chrome.storage.local.get(["userID"], function (result) {
-    if (result.userID) {
+    if (result.userID && !location.href.includes("nickelled.com")) { // the user is on the help centre or similar page, don't display popup
         idleTimer();
     }
     else {
         chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-            if (message.action === "user_logged_in") {
+            if (message.action === "user_logged_in" && !location.href.includes("nickelled.com")) {
                 idleTimer();
             }
         });
